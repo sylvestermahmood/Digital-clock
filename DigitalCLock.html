@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title> Date Difference </title>
+
+    <style>
+        body {
+          background-color: black;
+        }
+    
+        .MyClock {
+            color: #ffffff;
+            font-size: 85px;
+            margin-left: 23%;
+            margin-top: 15%;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+        }
+    </style>
+    
+</head>
+
+
+<body>
+    <div id="MyClock" class="myclock"> </div>
+    <script>
+        let digital_clock=  () => {
+            let rightNow = new Date();
+            let h = rightNow.getHours();
+            let m = rightNow.getMinutes();
+            let s = rightNow.getSeconds();
+            let y = rightNow.getFullYear();
+            let m1 = rightNow.getMonth();
+            let d = rightNow.getDate();
+
+            let session = 'AM';
+
+            if (h > 12) {
+                h = h - 12;
+                session = 'PM';
+            }
+            let time = h + " : " + m + " : " + s + " " + session + "<br> <br>" +  d + " / " + m1 + " / " + y ;
+            document.getElementById("MyClock").innerHTML = time;
+        }
+        //           digital_clock();
+        setInterval(digital_clock, 1000);
+
+    </script>
+
+
+</body>
+
+</html>
